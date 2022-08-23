@@ -8,8 +8,16 @@ require('dotenv').config()
 
 const PORT = 4040
 
+
+// middleware to get the body sent to  the server
+app.use(express.json())
+
+// responding to the static pages
 app.use(express.static('./public'))
 
+
+
+//using the router middleware
 app.use('/api/v1/tasks',task)
 
 app.use(notFound)
